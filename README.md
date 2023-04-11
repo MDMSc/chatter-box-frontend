@@ -1,3 +1,7 @@
+# Chatter-box-frontend
+
+This is the frontend code for chatter-box messaging app project.
+
 # Deployed links
 
 Deployed frontend link- https://chatter-box-messenger.netlify.app/ \
