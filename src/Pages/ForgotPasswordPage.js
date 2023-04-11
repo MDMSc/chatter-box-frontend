@@ -35,7 +35,7 @@ export default function ForgotPasswordPage() {
         </Text>
       </Box>
 
-      {/* {switchPage ? (
+      {switchPage ? (
         switchNewPass ? (
           <NewPassword email={email} />
         ) : (
@@ -47,8 +47,7 @@ export default function ForgotPasswordPage() {
         )
       ) : (
         <ForgotPasswordComp handleSwitch={handleSwitch} />
-      )} */}
-      <Text>Forgot Password Page</Text>
+      )}
     </Container>
   );
 }
