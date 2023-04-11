@@ -1,6 +1,6 @@
 # Deployed links
 
-Deployed frontend link- https://chatter-box-messenger.netlify.app/
+Deployed frontend link- https://chatter-box-messenger.netlify.app/ \
 Deployed backend link- https://api-chatter-box.onrender.com/
 
 # Getting Started with Create React App
