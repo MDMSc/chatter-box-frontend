@@ -1,0 +1,10 @@
+.messages_div {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.single_message {
+    display: flex;
+}
