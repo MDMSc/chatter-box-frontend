@@ -1,3 +1,12 @@
+# Chatter-box-frontend
+
+This is the frontend code for chatter-box messaging app project.
+
+# Deployed links
+
+Deployed frontend link- https://chatter-box-messenger.netlify.app/ \
+Deployed backend link- https://api-chatter-box.onrender.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

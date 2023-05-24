@@ -49,7 +49,6 @@ export default function Login({ handleSwitch }) {
         values.email = defaultLogin.email;
         values.password = defaultLogin.password;
       }
-
       setLoading(true);
       axios
         .post(`${SERVER_USER_API}/login`, values, {
