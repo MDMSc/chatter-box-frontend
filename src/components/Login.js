@@ -7,6 +7,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
@@ -17,6 +18,7 @@ import { SERVER_USER_API } from "../Global";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { ChatState } from "../context/ChatContextProvider";
+import { defaultLogin } from "../config/DefaultCredentials";
 
 const initialValues = {
   email: "",
@@ -24,8 +26,8 @@ const initialValues = {
 };
 
 const validationSchema = yup.object({
-  email: yup.string().email("Invalid Email!!!").required("Required!!!"),
-  password: yup.string().required("Required!!!"),
+  email: yup.string().email("Invalid Email!!!"),
+  password: yup.string(),
 });
 
 export default function Login({ handleSwitch }) {
@@ -42,6 +44,12 @@ export default function Login({ handleSwitch }) {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
+      
+      if(!values.email && !values.password){
+        values.email = defaultLogin.email;
+        values.password = defaultLogin.password;
+      }
+
       setLoading(true);
       axios
         .post(`${SERVER_USER_API}/login`, values, {
@@ -154,7 +162,6 @@ export default function Login({ handleSwitch }) {
       <VStack spacing="3" fontFamily="Work sans">
         <FormControl
           id="email_login"
-          isRequired
           isInvalid={formik.touched.email && formik.errors.email}
         >
           <FormLabel fontWeight="bold">Email address</FormLabel>
@@ -171,7 +178,6 @@ export default function Login({ handleSwitch }) {
 
         <FormControl
           id="password_login"
-          isRequired
           isInvalid={formik.touched.password && formik.errors.password}
         >
           <FormLabel fontWeight="bold">Password</FormLabel>
@@ -214,6 +220,7 @@ export default function Login({ handleSwitch }) {
             Let's Chat
           </Button>
         </FormControl>
+        <Text fontSize='xs'><sup>*</sup>For default login, kindly click 'Let's Chat' button without entering any values</Text>
       </VStack>
     </form>
   );
